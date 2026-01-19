@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌴 Viaje Riviera Maya - 30 Cumpleaños</title>
+    <title>🌴 Viaje Riviera Maya - Celebración 30</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -219,6 +219,117 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--coral-dark);
+        }
+
+        /* Experience Card */
+        .experience-card {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-left: 5px solid var(--palmera);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .experience-card .alert-content h4 {
+            color: var(--palmera);
+        }
+
+        /* Excursion Cards */
+        .excursions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .excursion-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .excursion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .excursion-card.must-do {
+            border: 3px solid var(--palmera);
+        }
+
+        .excursion-card.must-do::before {
+            content: '⭐ IMPRESCINDIBLE';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--palmera);
+            color: var(--blanco);
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 0 17px 0 12px;
+        }
+
+        .excursion-card.recommended::before {
+            content: '👍 RECOMENDABLE';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--turquesa);
+            color: var(--blanco);
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 0 17px 0 12px;
+        }
+
+        .excursion-card.skip::before {
+            content: '🤔 PRESCINDIBLE';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--gris);
+            color: var(--blanco);
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 0 17px 0 12px;
+        }
+
+        .excursion-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .excursion-icon {
+            font-size: 2.5rem;
+        }
+
+        .excursion-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .excursion-rating {
+            color: var(--arena-dark);
+            font-size: 1rem;
+        }
+
+        .excursion-desc {
+            color: var(--gris);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Hotel Cards */
@@ -1013,14 +1124,14 @@
     <section class="hero">
         <div class="hero-badge">Febrero 2027</div>
         <h1>Riviera Maya</h1>
-        <p class="hero-subtitle">Celebración 30 Cumpleaños 🎉</p>
+        <p class="hero-subtitle">Celebración de los 30 🎉</p>
         <div class="hero-stats">
             <div class="hero-stat">
                 <div class="hero-stat-value">10</div>
                 <div class="hero-stat-label">Días</div>
             </div>
             <div class="hero-stat">
-                <div class="hero-stat-value">15</div>
+                <div class="hero-stat-value">~15</div>
                 <div class="hero-stat-label">Personas</div>
             </div>
             <div class="hero-stat">
@@ -1040,6 +1151,120 @@
             <div class="alert-content">
                 <h4>Plan Early Bird - Conseguir el Mejor Precio</h4>
                 <p>Las aerolíneas abren vuelos con 10-12 meses de antelación. Para febrero 2027, los vuelos se abrirán entre <strong>marzo y abril de 2026</strong>. Hay que estar preparados para reservar en cuanto estén disponibles y conseguir los mejores precios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excursions Section (NEW!) -->
+    <section class="section" id="excursiones">
+        <div class="section-header">
+            <span class="section-tag">🎯 Experiencia Real</span>
+            <h2 class="section-title">Excursiones Recomendadas</h2>
+            <p class="section-subtitle">Recomendaciones de alguien del grupo que ya estuvo en Riviera Maya</p>
+        </div>
+
+        <div class="experience-card">
+            <div class="alert-icon">💡</div>
+            <div class="alert-content">
+                <h4>Experiencia de primera mano</h4>
+                <p>Estas recomendaciones vienen de alguien del grupo que estuvo en <strong>Riviera Maya en marzo 2023</strong> (Catalonia Yucatan Beach) e hizo todas estas excursiones. Sabemos lo que merece la pena y lo que no para un viaje de colegas.</p>
+            </div>
+        </div>
+
+        <h3 style="margin: 2rem 0 1rem; color: var(--palmera);">⭐ IMPRESCINDIBLES - El grupo tiene que hacerlas</h3>
+        <div class="excursions-grid">
+            <div class="excursion-card must-do">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🐢</div>
+                    <div>
+                        <div class="excursion-title">Akumal + Tulum + Cenote</div>
+                        <div class="excursion-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Es EL combo perfecto para primerizos. Nadar con tortugas + ruinas icónicas sobre el mar + cenote = la experiencia completa de Riviera Maya. Muy instagrameable, el grupo va a flipar.</p>
+            </div>
+
+            <div class="excursion-card must-do">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🏛️</div>
+                    <div>
+                        <div class="excursion-title">Cobá + Cenote Ik-Kil</div>
+                        <div class="excursion-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Cobá mola más que Chichén Itzá: puedes SUBIR a la pirámide y hay menos turismo masivo. Ik-Kil es espectacular (aunque hay bastante gente). Merece mucho la pena.</p>
+            </div>
+
+            <div class="excursion-card must-do">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🎉</div>
+                    <div>
+                        <div class="excursion-title">Coco Bongo</div>
+                        <div class="excursion-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Para viaje de celebración con colegas es OBLIGATORIO. Barra libre, show espectacular tipo Las Vegas, fiesta total. Una noche inolvidable que no os podéis perder.</p>
+            </div>
+        </div>
+
+        <h3 style="margin: 2rem 0 1rem; color: var(--turquesa-dark);">👍 MUY RECOMENDABLES - Si hay tiempo y presupuesto</h3>
+        <div class="excursions-grid">
+            <div class="excursion-card recommended">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🏺</div>
+                    <div>
+                        <div class="excursion-title">Chichén Itzá</div>
+                        <div class="excursion-rating">⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Es maravilla del mundo, hay que verla al menos una vez. Pero es día completo, mucha paliza, y no puedes subir. Solo si hay mucho interés en historia/cultura en el grupo.</p>
+            </div>
+
+            <div class="excursion-card recommended">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🏝️</div>
+                    <div>
+                        <div class="excursion-title">Isla Mujeres</div>
+                        <div class="excursion-rating">⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Día tranquilo, buen rollo, playa bonita. Mejor que Contoy para grupo grande (más servicios, bares). Ideal para día de resaca post-Coco Bongo 😄</p>
+            </div>
+        </div>
+
+        <h3 style="margin: 2rem 0 1rem; color: var(--gris);">🤔 PRESCINDIBLES - Para este viaje se pueden saltar</h3>
+        <div class="excursions-grid">
+            <div class="excursion-card skip">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🦜</div>
+                    <div>
+                        <div class="excursion-title">Isla Contoy</div>
+                        <div class="excursion-rating">⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Es reserva natural, muy bonita pero más contemplativa. Para grupo de colegas buscando fiesta... se puede saltar. Mejor Isla Mujeres que tiene más vidilla.</p>
+            </div>
+
+            <div class="excursion-card skip">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🌿</div>
+                    <div>
+                        <div class="excursion-title">Sian Ka'an</div>
+                        <div class="excursion-rating">⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Precioso pero es naturaleza pura, tranquilidad. No es el vibe de viaje de celebración con 15 colegas. Mejor dejarlo para viaje romántico en pareja.</p>
+            </div>
+
+            <div class="excursion-card skip">
+                <div class="excursion-header">
+                    <div class="excursion-icon">🤿</div>
+                    <div>
+                        <div class="excursion-title">Buceo</div>
+                        <div class="excursion-rating">⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="excursion-desc">Solo si hay varios del grupo con certificación o interés real. El snorkel en Akumal o desde el hotel ya cubre la experiencia para la mayoría.</p>
             </div>
         </div>
     </section>
@@ -1282,7 +1507,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Oct-Nov 2026</div>
                     <div class="timeline-title">✅ Confirmar todo</div>
-                    <div class="timeline-desc">Pago final. Reservar excursiones opcionales (Tulum, Xel-Há, Coco Bongo...)</div>
+                    <div class="timeline-desc">Pago final. Reservar excursiones opcionales (Tulum, Cobá, Coco Bongo...)</div>
                 </div>
             </div>
 
@@ -1302,7 +1527,7 @@
         <div class="section-header">
             <span class="section-tag">10 Días</span>
             <h2 class="section-title">Plan del Viaje</h2>
-            <p class="section-subtitle">Propuesta flexible, adaptable según el grupo</p>
+            <p class="section-subtitle">Propuesta flexible basada en experiencia previa</p>
         </div>
 
         <div class="itinerary-grid">
@@ -1314,7 +1539,7 @@
                 <div class="day-content">
                     <div class="day-icon">✈️</div>
                     <h4 class="day-title">Llegada</h4>
-                    <p class="day-desc">Instalarse, explorar el resort, primera cena juntos</p>
+                    <p class="day-desc">Traslado al hotel, explorar el resort, primera cena juntos</p>
                 </div>
             </div>
 
@@ -1325,8 +1550,8 @@
                 </div>
                 <div class="day-content">
                     <div class="day-icon">🏖️</div>
-                    <h4 class="day-title">Playa & Snorkel</h4>
-                    <p class="day-desc">Adaptarse al horario, snorkel desde el muelle</p>
+                    <h4 class="day-title">Playa & Piscina</h4>
+                    <p class="day-desc">Adaptarse al horario, snorkel desde el muelle del hotel</p>
                 </div>
             </div>
 
@@ -1336,9 +1561,9 @@
                     <div class="day-label">Día</div>
                 </div>
                 <div class="day-content">
-                    <div class="day-icon">🏛️</div>
-                    <h4 class="day-title">Tulum + Cenote</h4>
-                    <p class="day-desc">Excursión a ruinas mayas y baño en cenote</p>
+                    <div class="day-icon">🐢</div>
+                    <h4 class="day-title">Akumal + Tulum + Cenote</h4>
+                    <p class="day-desc">Tortugas, ruinas mayas icónicas y baño en cenote</p>
                 </div>
             </div>
 
@@ -1350,7 +1575,7 @@
                 <div class="day-content">
                     <div class="day-icon">🍹</div>
                     <h4 class="day-title">Día Relax</h4>
-                    <p class="day-desc">Probar diferentes restaurantes y bares del complejo</p>
+                    <p class="day-desc">Probar diferentes restaurantes, spa, deportes acuáticos</p>
                 </div>
             </div>
 
@@ -1360,21 +1585,21 @@
                     <div class="day-label">Día</div>
                 </div>
                 <div class="day-content">
-                    <div class="day-icon">🎢</div>
-                    <h4 class="day-title">Xel-Há / Xcaret</h4>
-                    <p class="day-desc">Parque acuático con todo incluido</p>
+                    <div class="day-icon">🏛️</div>
+                    <h4 class="day-title">Cobá + Cenote Ik-Kil</h4>
+                    <p class="day-desc">Subir la pirámide de Cobá y baño en cenote espectacular</p>
                 </div>
             </div>
 
-            <div class="day-card special">
+            <div class="day-card">
                 <div class="day-header">
                     <div class="day-number">6</div>
                     <div class="day-label">Día</div>
                 </div>
                 <div class="day-content">
-                    <div class="day-icon">🎉</div>
-                    <h4 class="day-title">¡CUMPLEAÑOS!</h4>
-                    <p class="day-desc">Spa por la mañana, cena especial, fiesta en el resort</p>
+                    <div class="day-icon">🏝️</div>
+                    <h4 class="day-title">Isla Mujeres</h4>
+                    <p class="day-desc">Playa, pueblo con encanto, buen rollo, atardecer</p>
                 </div>
             </div>
 
@@ -1384,21 +1609,21 @@
                     <div class="day-label">Día</div>
                 </div>
                 <div class="day-content">
-                    <div class="day-icon">🌊</div>
-                    <h4 class="day-title">Cenotes</h4>
-                    <p class="day-desc">Visitar Dos Ojos o Gran Cenote</p>
+                    <div class="day-icon">🎰</div>
+                    <h4 class="day-title">Día Libre</h4>
+                    <p class="day-desc">Casino, bolera, piscinas, shows nocturnos del resort</p>
                 </div>
             </div>
 
-            <div class="day-card">
+            <div class="day-card special">
                 <div class="day-header">
                     <div class="day-number">8</div>
                     <div class="day-label">Día</div>
                 </div>
                 <div class="day-content">
-                    <div class="day-icon">🎰</div>
-                    <h4 class="day-title">Día Libre</h4>
-                    <p class="day-desc">Deportes acuáticos, casino, bolera, piscinas</p>
+                    <div class="day-icon">🎉</div>
+                    <h4 class="day-title">COCO BONGO</h4>
+                    <p class="day-desc">Playa de día, Playa del Carmen y Coco Bongo de noche 🔥</p>
                 </div>
             </div>
 
@@ -1408,9 +1633,9 @@
                     <div class="day-label">Día</div>
                 </div>
                 <div class="day-content">
-                    <div class="day-icon">🎊</div>
-                    <h4 class="day-title">Playa del Carmen</h4>
-                    <p class="day-desc">Quinta Avenida, Coco Bongo</p>
+                    <div class="day-icon">😴</div>
+                    <h4 class="day-title">Día Resaca</h4>
+                    <p class="day-desc">Relax total, despedida del resort, última cena grupal</p>
                 </div>
             </div>
 
@@ -1422,8 +1647,16 @@
                 <div class="day-content">
                     <div class="day-icon">✈️</div>
                     <h4 class="day-title">Vuelta</h4>
-                    <p class="day-desc">Última mañana de playa y vuelo de regreso</p>
+                    <p class="day-desc">Última mañana de playa y vuelo de regreso a casa</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="alert-card" style="margin-top: 2rem; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left-color: var(--turquesa);">
+            <div class="alert-icon">💡</div>
+            <div class="alert-content">
+                <h4 style="color: var(--turquesa-dark);">Planning Flexible</h4>
+                <p>Este planning es una propuesta. Si el grupo prefiere Chichén Itzá en lugar de Cobá, o quiere cambiar el orden, se adapta sin problema. Lo importante es dejar días de relax entre excursiones.</p>
             </div>
         </div>
     </section>
@@ -1440,8 +1673,8 @@
             <div class="budget-header">
                 <h3 class="budget-title">Desglose principal</h3>
                 <div class="budget-total">
-                    <div class="budget-total-value">1.740 - 2.360€</div>
-                    <div class="budget-total-label">por persona</div>
+                    <div class="budget-total-value">1.950 - 2.700€</div>
+                    <div class="budget-total-label">por persona (con excursiones)</div>
                 </div>
             </div>
             <table class="budget-table">
@@ -1465,30 +1698,34 @@
                         <td>40 - 60€</td>
                     </tr>
                     <tr>
+                        <td>🎯 Excursiones (3-4 actividades recomendadas)</td>
+                        <td>200 - 350€</td>
+                    </tr>
+                    <tr>
                         <td><strong>TOTAL POR PERSONA</strong></td>
-                        <td><strong>1.740 - 2.360€</strong></td>
+                        <td><strong>1.950 - 2.700€</strong></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="section-header" style="margin-top: 3rem;">
-            <h3 class="section-title" style="font-size: 1.5rem;">Extras Opcionales</h3>
+            <h3 class="section-title" style="font-size: 1.5rem;">Excursiones - Precios Orientativos</h3>
         </div>
 
         <div class="extras-grid">
             <div class="extra-card">
-                <div class="extra-icon">🏛️</div>
+                <div class="extra-icon">🐢</div>
                 <div class="extra-info">
-                    <h4>Tulum + Cenote</h4>
+                    <h4>Akumal + Tulum + Cenote</h4>
                     <div class="extra-price">80-120€</div>
                 </div>
             </div>
             <div class="extra-card">
-                <div class="extra-icon">🎢</div>
+                <div class="extra-icon">🏛️</div>
                 <div class="extra-info">
-                    <h4>Xel-Há o Xcaret</h4>
-                    <div class="extra-price">100-150€</div>
+                    <h4>Cobá + Cenote Ik-Kil</h4>
+                    <div class="extra-price">70-100€</div>
                 </div>
             </div>
             <div class="extra-card">
@@ -1499,17 +1736,17 @@
                 </div>
             </div>
             <div class="extra-card">
-                <div class="extra-icon">🏺</div>
+                <div class="extra-icon">🏝️</div>
                 <div class="extra-info">
-                    <h4>Chichén Itzá</h4>
-                    <div class="extra-price">90-130€</div>
+                    <h4>Isla Mujeres</h4>
+                    <div class="extra-price">60-90€</div>
                 </div>
             </div>
             <div class="extra-card">
-                <div class="extra-icon">🤿</div>
+                <div class="extra-icon">🏺</div>
                 <div class="extra-info">
-                    <h4>Buceo (2 inmersiones)</h4>
-                    <div class="extra-price">100-140€</div>
+                    <h4>Chichén Itzá (opcional)</h4>
+                    <div class="extra-price">90-130€</div>
                 </div>
             </div>
             <div class="extra-card">
@@ -1568,7 +1805,6 @@
                     <li><a href="https://www.viajeselcorteingles.es" target="_blank">Viajes El Corte Inglés</a></li>
                     <li><a href="https://www.nautalia.com" target="_blank">Nautalia</a></li>
                     <li><a href="https://www.bthetravelbrand.com" target="_blank">B The Travel Brand</a></li>
-                    <li><a href="http://www.europamultiviajes.com" target="_blank">Europa Multiviajes (local)</a></li>
                 </ul>
             </div>
 
@@ -1578,9 +1814,9 @@
                     <h4 class="link-category-title">Excursiones</h4>
                 </div>
                 <ul class="link-list">
-                    <li><a href="https://www.xcaret.com" target="_blank">Xcaret</a></li>
-                    <li><a href="https://www.xelha.com" target="_blank">Xel-Há</a></li>
-                    <li><a href="https://www.xplor.travel" target="_blank">Xplor</a></li>
+                    <li><a href="https://www.civitatis.com/es/riviera-maya/" target="_blank">Civitatis</a></li>
+                    <li><a href="https://www.getyourguide.es" target="_blank">GetYourGuide</a></li>
+                    <li><a href="https://www.viator.com" target="_blank">Viator</a></li>
                     <li><a href="https://www.cocobongo.com" target="_blank">Coco Bongo</a></li>
                 </ul>
             </div>
@@ -1727,7 +1963,7 @@
     <footer class="footer">
         <div class="footer-emoji">🌴🎉🍹</div>
         <h2>¡Nos vemos en Riviera Maya!</h2>
-        <p>Documento generado en Enero 2026 · Plan Early Bird incluido</p>
+        <p>Documento actualizado en Enero 2026 · Plan Early Bird incluido</p>
     </footer>
 
     <script>
