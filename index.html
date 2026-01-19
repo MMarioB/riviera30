@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌴 Viaje Riviera Maya - 30 Cumpleaños</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --turquesa: #0891b2;
+            --turquesa-dark: #0e7490;
+            --turquesa-light: #67e8f9;
+            --arena: #fef3c7;
+            --arena-dark: #fcd34d;
+            --coral: #f97316;
+            --coral-dark: #ea580c;
+            --palmera: #15803d;
+            --noche: #1e293b;
+            --blanco: #ffffff;
+            --gris-suave: #f8fafc;
+            --gris: #64748b;
+            --gradient-ocean: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #164e63 100%);
+            --gradient-sunset: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+            --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.15);
+            --shadow-hover: 0 20px 60px -15px rgba(0,0,0,0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--gris-suave);
+            color: var(--noche);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%),
+                url('https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=1920&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, var(--gris-suave), transparent);
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 4px 20px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-stat {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--blanco);
+            border-radius: 50%;
+            animation: scrollDown 2s infinite;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--gradient-ocean);
+            color: var(--blanco);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--noche);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--gris);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Alert Card */
+        .alert-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 5px solid var(--coral);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .alert-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .alert-content h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--coral-dark);
+        }
+
+        /* Hotel Cards */
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .hotel-card {
+            background: var(--blanco);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hotel-card.recommended {
+            border: 3px solid var(--turquesa);
+        }
+
+        .hotel-card.recommended::before {
+            content: '🏆 RECOMENDADO';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-ocean);
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .hotel-card.alternative::before {
+            content: 'ALTERNATIVA';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gris);
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .hotel-card.budget::before {
+            content: 'MÁS ECONÓMICO';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--palmera);
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .hotel-card.not-recommended {
+            opacity: 0.7;
+        }
+
+        .hotel-card.not-recommended::before {
+            content: '❌ NO RECOMENDADO';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #dc2626;
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .hotel-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hotel-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        }
+
+        .hotel-stars {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            color: var(--arena-dark);
+            font-size: 1.2rem;
+            z-index: 5;
+        }
+
+        .hotel-content {
+            padding: 1.5rem;
+        }
+
+        .hotel-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--noche);
+        }
+
+        .hotel-location {
+            color: var(--gris);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hotel-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-tag {
+            background: var(--gris-suave);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--gris);
+        }
+
+        .hotel-pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--gris-suave);
+            border-radius: 12px;
+        }
+
+        .pros h5, .cons h5 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pros h5 {
+            color: var(--palmera);
+        }
+
+        .cons h5 {
+            color: #dc2626;
+        }
+
+        .pros ul, .cons ul {
+            list-style: none;
+            font-size: 0.8rem;
+            color: var(--gris);
+        }
+
+        .pros li::before {
+            content: '✓ ';
+            color: var(--palmera);
+            font-weight: bold;
+        }
+
+        .cons li::before {
+            content: '✗ ';
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .hotel-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .hotel-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--turquesa-dark);
+        }
+
+        .hotel-price span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--gris);
+        }
+
+        .hotel-btn {
+            background: var(--gradient-ocean);
+            color: var(--blanco);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hotel-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(8, 145, 178, 0.4);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--turquesa), var(--coral));
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+        }
+
+        .timeline-content {
+            background: var(--blanco);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            max-width: 400px;
+            position: relative;
+        }
+
+        .timeline-content.highlight {
+            background: var(--gradient-sunset);
+            color: var(--blanco);
+        }
+
+        .timeline-content.highlight .timeline-date {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--turquesa);
+            border: 4px solid var(--blanco);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0 4px var(--turquesa-light);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+            left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 10px;
+                right: auto;
+            }
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--turquesa-dark);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--gris);
+        }
+
+        .timeline-content.highlight .timeline-desc {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Itinerary Cards */
+        .itinerary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .day-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .day-card.special {
+            background: var(--gradient-sunset);
+            color: var(--blanco);
+        }
+
+        .day-header {
+            padding: 1rem 1.5rem;
+            background: var(--gradient-ocean);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .day-card.special .day-header {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .day-number {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .day-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .day-content {
+            padding: 1.5rem;
+        }
+
+        .day-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-desc {
+            font-size: 0.9rem;
+            color: var(--gris);
+        }
+
+        .day-card.special .day-desc {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Budget Section */
+        .budget-card {
+            background: var(--blanco);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 2rem;
+        }
+
+        .budget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .budget-title {
+            font-size: 1.5rem;
+        }
+
+        .budget-total {
+            background: var(--gradient-ocean);
+            color: var(--blanco);
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .budget-total-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .budget-total-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .budget-table th {
+            font-weight: 600;
+            color: var(--gris);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .budget-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--turquesa-dark);
+        }
+
+        .budget-table tr:last-child td {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: var(--arena);
+            border-radius: 8px;
+        }
+
+        /* Extras Grid */
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .extra-card {
+            background: var(--blanco);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .extra-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .extra-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .extra-info h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .extra-price {
+            color: var(--turquesa-dark);
+            font-weight: 600;
+        }
+
+        /* Links Section */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .link-category {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .link-category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gris-suave);
+        }
+
+        .link-category-icon {
+            font-size: 1.5rem;
+        }
+
+        .link-category-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .link-list {
+            list-style: none;
+        }
+
+        .link-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .link-list a {
+            color: var(--turquesa-dark);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .link-list a:hover {
+            color: var(--coral);
+        }
+
+        .link-list a::before {
+            content: '→';
+            color: var(--turquesa);
+        }
+
+        /* Checklist */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .checklist-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .checklist-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--turquesa-light);
+        }
+
+        .checklist-icon {
+            font-size: 1.5rem;
+        }
+
+        .checklist-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .checklist-items {
+            list-style: none;
+        }
+
+        .checklist-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .checklist-items li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-items li:hover {
+            background: var(--gris-suave);
+            margin: 0 -1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-radius: 8px;
+        }
+
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--turquesa);
+            border-radius: 6px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-items li.checked .checkbox {
+            background: var(--turquesa);
+            color: var(--blanco);
+        }
+
+        .checklist-items li.checked .checkbox::after {
+            content: '✓';
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checklist-items li.checked span {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--noche);
+            color: var(--blanco);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        @keyframes scrollDown {
+            0% {
+                opacity: 1;
+                top: 8px;
+            }
+            100% {
+                opacity: 0;
+                top: 32px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .hero-stat {
+                padding: 0.75rem 1.25rem;
+            }
+
+            .hero-stat-value {
+                font-size: 1.5rem;
+            }
+
+            .hotels-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hotel-pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .budget-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">Febrero 2027</div>
+        <h1>Riviera Maya</h1>
+        <p class="hero-subtitle">Celebración 30 Cumpleaños 🎉</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-value">10</div>
+                <div class="hero-stat-label">Días</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">15</div>
+                <div class="hero-stat-label">Personas</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">5★</div>
+                <div class="hero-stat-label">Todo Incluido</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Alert Section -->
+    <section class="section">
+        <div class="alert-card">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+                <h4>Plan Early Bird - Conseguir el Mejor Precio</h4>
+                <p>Las aerolíneas abren vuelos con 10-12 meses de antelación. Para febrero 2027, los vuelos se abrirán entre <strong>marzo y abril de 2026</strong>. Hay que estar preparados para reservar en cuanto estén disponibles y conseguir los mejores precios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="section" id="hoteles">
+        <div class="section-header">
+            <span class="section-tag">Comparativa</span>
+            <h2 class="section-title">Hoteles Valorados</h2>
+            <p class="section-subtitle">Analizamos las mejores opciones de todo incluido para el grupo</p>
+        </div>
+
+        <div class="hotels-grid">
+            <!-- Barceló Maya Palace -->
+            <div class="hotel-card recommended">
+                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80')">
+                    <div class="hotel-stars">★★★★★</div>
+                </div>
+                <div class="hotel-content">
+                    <h3 class="hotel-name">Barceló Maya Palace</h3>
+                    <div class="hotel-location">
+                        <span>📍</span> Riviera Maya · 1h 15min del aeropuerto
+                    </div>
+                    <div class="hotel-features">
+                        <span class="feature-tag">🏖️ Playa increíble</span>
+                        <span class="feature-tag">🤿 Snorkel</span>
+                        <span class="feature-tag">🎰 Casino</span>
+                        <span class="feature-tag">🍽️ 16+ restaurantes</span>
+                        <span class="feature-tag">🏊 11 piscinas</span>
+                    </div>
+                    <div class="hotel-pros-cons">
+                        <div class="pros">
+                            <h5>Ventajas</h5>
+                            <ul>
+                                <li>Acceso a 5 hoteles</li>
+                                <li>Mejor playa de la zona</li>
+                                <li>Snorkel con tortugas</li>
+                                <li>Vida nocturna: casino, disco</li>
+                                <li>Cerca de Playa del Carmen</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>Inconvenientes</h5>
+                            <ul>
+                                <li>Check-in lento</li>
+                                <li>1h 15min del aeropuerto</li>
+                                <li>Resort muy grande</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            1.200-1.600€ <span>/persona 9 noches</span>
+                        </div>
+                        <a href="https://www.barcelo.com/es-ww/barcelo-maya-palace/" target="_blank" class="hotel-btn">Ver hotel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barceló Maya Beach -->
+            <div class="hotel-card budget">
+                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80')">
+                    <div class="hotel-stars">★★★★★</div>
+                </div>
+                <div class="hotel-content">
+                    <h3 class="hotel-name">Barceló Maya Beach/Caribe</h3>
+                    <div class="hotel-location">
+                        <span>📍</span> Riviera Maya · 1h 15min del aeropuerto
+                    </div>
+                    <div class="hotel-features">
+                        <span class="feature-tag">🏖️ Misma playa</span>
+                        <span class="feature-tag">🤿 Snorkel</span>
+                        <span class="feature-tag">💰 Más barato</span>
+                        <span class="feature-tag">🍽️ 12 restaurantes</span>
+                    </div>
+                    <div class="hotel-pros-cons">
+                        <div class="pros">
+                            <h5>Ventajas</h5>
+                            <ul>
+                                <li>Misma playa que Palace</li>
+                                <li>Acceso a 4 hoteles</li>
+                                <li>Precio más económico</li>
+                                <li>Snorkel incluido</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>Inconvenientes</h5>
+                            <ul>
+                                <li>Habitaciones más antiguas</li>
+                                <li>Sin acceso al Palace</li>
+                                <li>Servicio irregular</li>
+                                <li>Más masificado</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            900-1.200€ <span>/persona 9 noches</span>
+                        </div>
+                        <a href="https://www.barcelo.com/es-ww/barcelo-maya-beach/" target="_blank" class="hotel-btn">Ver hotel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Iberostar -->
+            <div class="hotel-card alternative">
+                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80')">
+                    <div class="hotel-stars">★★★★★</div>
+                </div>
+                <div class="hotel-content">
+                    <h3 class="hotel-name">Iberostar Selection Paraíso Maya</h3>
+                    <div class="hotel-location">
+                        <span>📍</span> Playa Paraíso · 25-30min del aeropuerto
+                    </div>
+                    <div class="hotel-features">
+                        <span class="feature-tag">🏊 Río lento</span>
+                        <span class="feature-tag">🌊 Piscina de olas</span>
+                        <span class="feature-tag">⛳ Golf incluido</span>
+                        <span class="feature-tag">👨‍👩‍👧 Mejor servicio</span>
+                    </div>
+                    <div class="hotel-pros-cons">
+                        <div class="pros">
+                            <h5>Ventajas</h5>
+                            <ul>
+                                <li>Mejor servicio al cliente</li>
+                                <li>Más cerca del aeropuerto</li>
+                                <li>8 piscinas con río lento</li>
+                                <li>Lobby espectacular (pirámide)</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>Inconvenientes</h5>
+                            <ul>
+                                <li>Playa peor y rocosa</li>
+                                <li>Sin snorkel</li>
+                                <li>Piscinas sin vistas al mar</li>
+                                <li>Más lejos de Tulum</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            1.100-1.500€ <span>/persona 9 noches</span>
+                        </div>
+                        <a href="https://www.iberostar.com/hoteles/riviera-maya/iberostar-selection-paraiso-maya/" target="_blank" class="hotel-btn">Ver hotel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BlueBay -->
+            <div class="hotel-card not-recommended">
+                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80')">
+                    <div class="hotel-stars">★★★★★</div>
+                </div>
+                <div class="hotel-content">
+                    <h3 class="hotel-name">BlueBay Grand Esmeralda</h3>
+                    <div class="hotel-location">
+                        <span>📍</span> Playa del Carmen
+                    </div>
+                    <div class="hotel-features">
+                        <span class="feature-tag">💰 Económico</span>
+                        <span class="feature-tag">🏨 Grande</span>
+                    </div>
+                    <div class="hotel-pros-cons">
+                        <div class="pros">
+                            <h5>Por qué se valoró</h5>
+                            <ul>
+                                <li>Precio más bajo</li>
+                                <li>Resort grande</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>Por qué se descartó</h5>
+                            <ul>
+                                <li>Reviews muy mixtas</li>
+                                <li>Habitaciones anticuadas</li>
+                                <li>Olores a humedad</li>
+                                <li>Servicio inconsistente</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotel-footer">
+                        <div class="hotel-price" style="color: #999; text-decoration: line-through;">
+                            800-1.000€ <span>/persona</span>
+                        </div>
+                        <span style="color: #dc2626; font-weight: 600;">Descartado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" id="plan">
+        <div class="section-header">
+            <span class="section-tag">Calendario</span>
+            <h2 class="section-title">Plan Early Bird</h2>
+            <p class="section-subtitle">Pasos para conseguir el mejor precio y asegurar el viaje</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Enero 2026</div>
+                    <div class="timeline-title">📋 Organizar el grupo</div>
+                    <div class="timeline-desc">Cerrar lista de asistentes, recoger datos de pasaporte, confirmar fechas preferidas, crear grupo de WhatsApp</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Enero 2026</div>
+                    <div class="timeline-title">🔔 Crear alertas</div>
+                    <div class="timeline-desc">Alertas en Skyscanner y Google Flights para MAD-CUN Feb 2027. Reservar hotel en barcelo.com (tarifa flexible, cancelable)</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content highlight">
+                    <div class="timeline-dot" style="background: var(--coral);"></div>
+                    <div class="timeline-date">Mar-Abr 2026</div>
+                    <div class="timeline-title">🔥 APERTURA VUELOS</div>
+                    <div class="timeline-desc">Revisar CADA SEMANA las aerolíneas. En cuanto salgan vuelos: COMPRAR INMEDIATAMENTE. Los mejores precios son los primeros días.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Mayo 2026</div>
+                    <div class="timeline-title">💰 Señal del grupo</div>
+                    <div class="timeline-desc">Recoger 200-300€ por persona. Comparar precio hotel directo vs agencia.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Oct-Nov 2026</div>
+                    <div class="timeline-title">✅ Confirmar todo</div>
+                    <div class="timeline-desc">Pago final. Reservar excursiones opcionales (Tulum, Xel-Há, Coco Bongo...)</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content highlight">
+                    <div class="timeline-dot" style="background: var(--coral);"></div>
+                    <div class="timeline-date">Febrero 2027</div>
+                    <div class="timeline-title">🎉 ¡A RIVIERA MAYA!</div>
+                    <div class="timeline-desc">Check-in online, maletas, y a disfrutar de los 30 en el Caribe 🌴🍹</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section class="section" id="itinerario">
+        <div class="section-header">
+            <span class="section-tag">10 Días</span>
+            <h2 class="section-title">Plan del Viaje</h2>
+            <p class="section-subtitle">Propuesta flexible, adaptable según el grupo</p>
+        </div>
+
+        <div class="itinerary-grid">
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">1</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">✈️</div>
+                    <h4 class="day-title">Llegada</h4>
+                    <p class="day-desc">Instalarse, explorar el resort, primera cena juntos</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">2</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🏖️</div>
+                    <h4 class="day-title">Playa & Snorkel</h4>
+                    <p class="day-desc">Adaptarse al horario, snorkel desde el muelle</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">3</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🏛️</div>
+                    <h4 class="day-title">Tulum + Cenote</h4>
+                    <p class="day-desc">Excursión a ruinas mayas y baño en cenote</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">4</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🍹</div>
+                    <h4 class="day-title">Día Relax</h4>
+                    <p class="day-desc">Probar diferentes restaurantes y bares del complejo</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">5</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🎢</div>
+                    <h4 class="day-title">Xel-Há / Xcaret</h4>
+                    <p class="day-desc">Parque acuático con todo incluido</p>
+                </div>
+            </div>
+
+            <div class="day-card special">
+                <div class="day-header">
+                    <div class="day-number">6</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🎉</div>
+                    <h4 class="day-title">¡CUMPLEAÑOS!</h4>
+                    <p class="day-desc">Spa por la mañana, cena especial, fiesta en el resort</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">7</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🌊</div>
+                    <h4 class="day-title">Cenotes</h4>
+                    <p class="day-desc">Visitar Dos Ojos o Gran Cenote</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">8</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🎰</div>
+                    <h4 class="day-title">Día Libre</h4>
+                    <p class="day-desc">Deportes acuáticos, casino, bolera, piscinas</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">9</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">🎊</div>
+                    <h4 class="day-title">Playa del Carmen</h4>
+                    <p class="day-desc">Quinta Avenida, Coco Bongo</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">10</div>
+                    <div class="day-label">Día</div>
+                </div>
+                <div class="day-content">
+                    <div class="day-icon">✈️</div>
+                    <h4 class="day-title">Vuelta</h4>
+                    <p class="day-desc">Última mañana de playa y vuelo de regreso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section class="section" id="presupuesto">
+        <div class="section-header">
+            <span class="section-tag">💰 Presupuesto</span>
+            <h2 class="section-title">Coste Estimado</h2>
+            <p class="section-subtitle">Por persona, 10 días en febrero 2027</p>
+        </div>
+
+        <div class="budget-card">
+            <div class="budget-header">
+                <h3 class="budget-title">Desglose principal</h3>
+                <div class="budget-total">
+                    <div class="budget-total-value">1.740 - 2.360€</div>
+                    <div class="budget-total-label">por persona</div>
+                </div>
+            </div>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>✈️ Vuelo Madrid-Cancún (ida y vuelta, directo)</td>
+                        <td>500 - 700€</td>
+                    </tr>
+                    <tr>
+                        <td>🏨 Barceló Maya Palace 9 noches Todo Incluido</td>
+                        <td>1.200 - 1.600€</td>
+                    </tr>
+                    <tr>
+                        <td>🚐 Traslados aeropuerto-hotel (grupo)</td>
+                        <td>40 - 60€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL POR PERSONA</strong></td>
+                        <td><strong>1.740 - 2.360€</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-header" style="margin-top: 3rem;">
+            <h3 class="section-title" style="font-size: 1.5rem;">Extras Opcionales</h3>
+        </div>
+
+        <div class="extras-grid">
+            <div class="extra-card">
+                <div class="extra-icon">🏛️</div>
+                <div class="extra-info">
+                    <h4>Tulum + Cenote</h4>
+                    <div class="extra-price">80-120€</div>
+                </div>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">🎢</div>
+                <div class="extra-info">
+                    <h4>Xel-Há o Xcaret</h4>
+                    <div class="extra-price">100-150€</div>
+                </div>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">🎉</div>
+                <div class="extra-info">
+                    <h4>Coco Bongo</h4>
+                    <div class="extra-price">80-100€</div>
+                </div>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">🏺</div>
+                <div class="extra-info">
+                    <h4>Chichén Itzá</h4>
+                    <div class="extra-price">90-130€</div>
+                </div>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">🤿</div>
+                <div class="extra-info">
+                    <h4>Buceo (2 inmersiones)</h4>
+                    <div class="extra-price">100-140€</div>
+                </div>
+            </div>
+            <div class="extra-card">
+                <div class="extra-icon">💆</div>
+                <div class="extra-info">
+                    <h4>Spa / Masaje (1h)</h4>
+                    <div class="extra-price">80-120€</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="section" id="enlaces">
+        <div class="section-header">
+            <span class="section-tag">🔗 Recursos</span>
+            <h2 class="section-title">Enlaces Útiles</h2>
+            <p class="section-subtitle">Todo lo que necesitas para organizar el viaje</p>
+        </div>
+
+        <div class="links-grid">
+            <div class="link-category">
+                <div class="link-category-header">
+                    <span class="link-category-icon">🏨</span>
+                    <h4 class="link-category-title">Hoteles</h4>
+                </div>
+                <ul class="link-list">
+                    <li><a href="https://www.barcelo.com/es-ww/barcelo-maya-palace/" target="_blank">Barceló Maya Palace (oficial)</a></li>
+                    <li><a href="https://www.barcelo.com/es-ww/barcelo-maya-beach/" target="_blank">Barceló Maya Beach (oficial)</a></li>
+                    <li><a href="https://www.iberostar.com/hoteles/riviera-maya/iberostar-selection-paraiso-maya/" target="_blank">Iberostar Paraíso Maya</a></li>
+                    <li><a href="https://www.booking.com/hotel/mx/barcelo-maya-palace" target="_blank">Barceló en Booking.com</a></li>
+                </ul>
+            </div>
+
+            <div class="link-category">
+                <div class="link-category-header">
+                    <span class="link-category-icon">✈️</span>
+                    <h4 class="link-category-title">Vuelos y Alertas</h4>
+                </div>
+                <ul class="link-list">
+                    <li><a href="https://www.skyscanner.es" target="_blank">Skyscanner (alertas)</a></li>
+                    <li><a href="https://www.google.com/flights" target="_blank">Google Flights</a></li>
+                    <li><a href="https://www.iberia.com" target="_blank">Iberia</a></li>
+                    <li><a href="https://www.aireuropa.com" target="_blank">Air Europa</a></li>
+                    <li><a href="https://www.iberojet.es" target="_blank">Evelop / Iberojet</a></li>
+                </ul>
+            </div>
+
+            <div class="link-category">
+                <div class="link-category-header">
+                    <span class="link-category-icon">🏢</span>
+                    <h4 class="link-category-title">Agencias de Viajes</h4>
+                </div>
+                <ul class="link-list">
+                    <li><a href="https://www.logitravel.com" target="_blank">Logitravel</a></li>
+                    <li><a href="https://www.viajeselcorteingles.es" target="_blank">Viajes El Corte Inglés</a></li>
+                    <li><a href="https://www.nautalia.com" target="_blank">Nautalia</a></li>
+                    <li><a href="https://www.bthetravelbrand.com" target="_blank">B The Travel Brand</a></li>
+                    <li><a href="http://www.europamultiviajes.com" target="_blank">Europa Multiviajes (local)</a></li>
+                </ul>
+            </div>
+
+            <div class="link-category">
+                <div class="link-category-header">
+                    <span class="link-category-icon">🎢</span>
+                    <h4 class="link-category-title">Excursiones</h4>
+                </div>
+                <ul class="link-list">
+                    <li><a href="https://www.xcaret.com" target="_blank">Xcaret</a></li>
+                    <li><a href="https://www.xelha.com" target="_blank">Xel-Há</a></li>
+                    <li><a href="https://www.xplor.travel" target="_blank">Xplor</a></li>
+                    <li><a href="https://www.cocobongo.com" target="_blank">Coco Bongo</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist Section -->
+    <section class="section" id="checklist">
+        <div class="section-header">
+            <span class="section-tag">✅ Tareas</span>
+            <h2 class="section-title">Checklist del Grupo</h2>
+            <p class="section-subtitle">Haz clic en cada tarea para marcarla como completada</p>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">📋</span>
+                    <h4 class="checklist-title">Organización Inicial</h4>
+                </div>
+                <ul class="checklist-items">
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Cerrar lista definitiva de asistentes</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Recoger datos de pasaporte de todos</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Elegir fechas exactas (consenso)</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Crear grupo de WhatsApp del viaje</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Asignar responsable de reservas</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">🔔</span>
+                    <h4 class="checklist-title">Alertas (Hacer AHORA)</h4>
+                </div>
+                <ul class="checklist-items">
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Crear alerta en Skyscanner</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Activar seguimiento en Google Flights</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Reservar hotel barcelo.com (tarifa flexible)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">💰</span>
+                    <h4 class="checklist-title">Reservas</h4>
+                </div>
+                <ul class="checklist-items">
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Comprar vuelos (Mar-Abr 2026)</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Confirmar reserva hotel</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Recoger señal (200-300€/persona)</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Contratar seguro de viaje</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Reservar traslados aeropuerto</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">📄</span>
+                    <h4 class="checklist-title">Documentación</h4>
+                </div>
+                <ul class="checklist-items">
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Verificar pasaportes en vigor (mín 6 meses)</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Rellenar formulario electrónico México</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <span class="checklist-icon">✈️</span>
+                    <h4 class="checklist-title">Antes de Viajar</h4>
+                </div>
+                <ul class="checklist-items">
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Check-in online del vuelo</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Confirmar hora recogida traslado</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Reservar excursiones</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Pedir habitaciones cercanas al hotel</span>
+                    </li>
+                    <li onclick="this.classList.toggle('checked')">
+                        <div class="checkbox"></div>
+                        <span>Preparar maleta 🧳</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-emoji">🌴🎉🍹</div>
+        <h2>¡Nos vemos en Riviera Maya!</h2>
+        <p>Documento generado en Enero 2026 · Plan Early Bird incluido</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Save checklist state to localStorage
+        function saveChecklistState() {
+            const checkedItems = [];
+            document.querySelectorAll('.checklist-items li.checked').forEach((item, index) => {
+                checkedItems.push(item.textContent.trim());
+            });
+            localStorage.setItem('rivieraMayaChecklist', JSON.stringify(checkedItems));
+        }
+
+        // Load checklist state from localStorage
+        function loadChecklistState() {
+            const saved = localStorage.getItem('rivieraMayaChecklist');
+            if (saved) {
+                const checkedItems = JSON.parse(saved);
+                document.querySelectorAll('.checklist-items li').forEach(item => {
+                    if (checkedItems.includes(item.textContent.trim())) {
+                        item.classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        // Add save on click
+        document.querySelectorAll('.checklist-items li').forEach(item => {
+            item.addEventListener('click', () => {
+                setTimeout(saveChecklistState, 100);
+            });
+        });
+
+        // Load on page load
+        loadChecklistState();
+    </script>
+
+</body>
+</html>
