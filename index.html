@@ -829,6 +829,76 @@
             border-radius: 8px;
         }
 
+        /* Hotel Pricing Table */
+        .hotel-pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .hotel-pricing-table th,
+        .hotel-pricing-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hotel-pricing-table th {
+            font-weight: 600;
+            color: var(--gris);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--arena);
+        }
+
+        .hotel-pricing-table td:nth-child(2) {
+            text-align: center;
+        }
+
+        .hotel-pricing-table td:nth-child(3),
+        .hotel-pricing-table td:nth-child(4) {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .hotel-pricing-table td:nth-child(3) {
+            color: var(--gris);
+            font-size: 0.9rem;
+        }
+
+        .hotel-pricing-table td:nth-child(4) {
+            color: var(--turquesa-dark);
+            font-size: 1.1rem;
+        }
+
+        .hotel-pricing-table td:nth-child(5) {
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .hotel-pricing-table tr:hover {
+            background: var(--arena);
+        }
+
+        .price-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .price-badge.confirmed {
+            background: #d1fae5;
+            color: var(--palmera);
+        }
+
+        .price-badge.estimated {
+            background: #fef3c7;
+            color: var(--coral-dark);
+        }
+
         /* Extras Grid */
         .extras-grid {
             display: grid;
@@ -1161,6 +1231,14 @@
                 <p>Las agencias no pueden gestionar paquetes completos (vuelo+hotel) hasta que las aerolíneas abran los vuelos (sobre <strong>agosto 2026</strong> para feb 2027). Mientras tanto, podemos ir mirando hoteles y creando alertas de vuelos por nuestra cuenta.</p>
             </div>
         </div>
+
+        <div class="alert-card" style="background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%); border-left-color: #7c3aed;">
+            <div class="alert-icon">📅</div>
+            <div class="alert-content">
+                <h4 style="color: #5b21b6;">Días de salida disponibles</h4>
+                <p>La mayoría de las agencias y aerolíneas operan vuelos directos Madrid-Cancún los <strong>lunes, viernes y sábados</strong>. Tenlo en cuenta al planificar las fechas exactas del viaje.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Excursions Section (NEW!) -->
@@ -1282,7 +1360,7 @@
         <div class="section-header">
             <span class="section-tag">Comparativa</span>
             <h2 class="section-title">Hoteles Valorados</h2>
-            <p class="section-subtitle">5 opciones de todo incluido en rango de precio similar para comparar</p>
+            <p class="section-subtitle">6 opciones de todo incluido 5★ con precios actualizados para 10 noches</p>
         </div>
 
         <div class="hotels-grid">
@@ -1323,7 +1401,7 @@
                     </div>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            ~1.600€ <span>/persona 9 noches</span>
+                            1.642€ <span>/persona 10 noches</span>
                         </div>
                         <a href="https://www.barcelo.com/es-ww/barcelo-maya-palace/" target="_blank" class="hotel-btn">Ver hotel</a>
                     </div>
@@ -1367,104 +1445,148 @@
                     </div>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            ~1.200-1.400€ <span>/persona 9 noches</span>
+                            1.329€ <span>/persona 10 noches</span>
                         </div>
                         <a href="https://www.barcelo.com/es-ww/barcelo-maya-beach/" target="_blank" class="hotel-btn">Ver hotel</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Grand Palladium -->
+            <!-- Ocean Coral & Turquesa -->
             <div class="hotel-card alternative">
                 <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80')">
                     <div class="hotel-stars">★★★★★</div>
                 </div>
                 <div class="hotel-content">
-                    <h3 class="hotel-name">Grand Palladium Colonial / Kantenah</h3>
+                    <h3 class="hotel-name">Ocean Coral & Turquesa</h3>
                     <div class="hotel-location">
-                        <span>📍</span> Riviera Maya · 1h del aeropuerto
+                        <span>📍</span> Puerto Morelos · 25min del aeropuerto
                     </div>
                     <div class="hotel-features">
-                        <span class="feature-tag">🏖️ Playa privada</span>
-                        <span class="feature-tag">🍸 19 bares</span>
-                        <span class="feature-tag">💆 Spa completo</span>
-                        <span class="feature-tag">👨‍👩‍👧 Familiar</span>
-                    </div>
-                    <div class="hotel-pros-cons">
-                        <div class="pros">
-                            <h5>Ventajas</h5>
-                            <ul>
-                                <li>Muy bien valorado en reviews</li>
-                                <li>Acceso a 3 hoteles del complejo</li>
-                                <li>Cerca de Tulum</li>
-                                <li>Transfer aeropuerto incluido</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h5>Inconvenientes</h5>
-                            <ul>
-                                <li>Resort enorme (mucho caminar)</li>
-                                <li>Sargazo ocasional en playa</li>
-                                <li>Algunos servicios con cargo extra</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            ~1.400-1.600€ <span>/persona 9 noches</span>
-                        </div>
-                        <a href="https://www.palladiumhotelgroup.com/es/hoteles/mexico/rivieramaya/grand-palladium-colonial-resort-spa" target="_blank" class="hotel-btn">Ver hotel</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIU Palace -->
-            <div class="hotel-card alternative">
-                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80')">
-                    <div class="hotel-stars">★★★★★</div>
-                </div>
-                <div class="hotel-content">
-                    <h3 class="hotel-name">RIU Palace Riviera Maya</h3>
-                    <div class="hotel-location">
-                        <span>📍</span> Playacar · 55min del aeropuerto
-                    </div>
-                    <div class="hotel-features">
-                        <span class="feature-tag">✨ Reformado 2019</span>
-                        <span class="feature-tag">🏖️ Playacar</span>
-                        <span class="feature-tag">🍽️ 6 restaurantes</span>
+                        <span class="feature-tag">🏖️ Playa espectacular</span>
+                        <span class="feature-tag">🍽️ 9 restaurantes</span>
+                        <span class="feature-tag">💆 Spa H2O</span>
                         <span class="feature-tag">🎭 Shows</span>
                     </div>
                     <div class="hotel-pros-cons">
                         <div class="pros">
                             <h5>Ventajas</h5>
                             <ul>
-                                <li>Reformado recientemente</li>
-                                <li>Muy cerca de Playa del Carmen</li>
-                                <li>Zona Playacar (tranquila)</li>
-                                <li>Buenas valoraciones</li>
+                                <li>Muy cerca del aeropuerto</li>
+                                <li>Playa con arrecife coralino</li>
+                                <li>Zona Puerto Morelos (tranquila)</li>
+                                <li>Muy bien valorado</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h5>Inconvenientes</h5>
                             <ul>
-                                <li>Piscinas algo pequeñas</li>
-                                <li>Playa más pequeña</li>
-                                <li>Menos restaurantes que otros</li>
+                                <li>Más alejado de Playa del Carmen</li>
+                                <li>Precio estimado (pendiente cotizar)</li>
+                                <li>Pueblo pequeño cerca</li>
                             </ul>
                         </div>
                     </div>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            ~1.300-1.500€ <span>/persona 9 noches</span>
+                            ~1.470€ <span>/persona 10 noches</span>
                         </div>
-                        <a href="https://www.riu.com/es/hotel/mexico/playa-del-carmen/hotel-riu-palace-riviera-maya" target="_blank" class="hotel-btn">Ver hotel</a>
+                        <a href="https://www.oceanhotels.net/es/ocean-coral-turquesa" target="_blank" class="hotel-btn">Ver hotel</a>
                     </div>
                 </div>
             </div>
 
-            <!-- BlueBay -->
-            <div class="hotel-card budget">
+            <!-- RIU Lupita -->
+            <div class="hotel-card alternative">
+                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80')">
+                    <div class="hotel-stars">★★★★★</div>
+                </div>
+                <div class="hotel-content">
+                    <h3 class="hotel-name">RIU Lupita</h3>
+                    <div class="hotel-location">
+                        <span>📍</span> Playa del Carmen · 55min del aeropuerto
+                    </div>
+                    <div class="hotel-features">
+                        <span class="feature-tag">🏖️ Playa privada</span>
+                        <span class="feature-tag">🍽️ 4 restaurantes</span>
+                        <span class="feature-tag">💰 Buen precio</span>
+                        <span class="feature-tag">🎭 Shows</span>
+                    </div>
+                    <div class="hotel-pros-cons">
+                        <div class="pros">
+                            <h5>Ventajas</h5>
+                            <ul>
+                                <li>Muy cerca de Playa del Carmen</li>
+                                <li>Playa espectacular con arrecife</li>
+                                <li>Todo incluido completo</li>
+                                <li>Buen relación calidad-precio</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>Inconvenientes</h5>
+                            <ul>
+                                <li>Hotel más antiguo que otros</li>
+                                <li>Menos restaurantes</li>
+                                <li>Instalaciones sin renovar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            1.367€ <span>/persona 10 noches</span>
+                        </div>
+                        <a href="https://www.riu.com/es/hotel/mexico/playa-del-carmen/hotel-riu-lupita" target="_blank" class="hotel-btn">Ver hotel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grand Riviera Princess -->
+            <div class="hotel-card alternative">
                 <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=80')">
+                    <div class="hotel-stars">★★★★★</div>
+                </div>
+                <div class="hotel-content">
+                    <h3 class="hotel-name">Grand Riviera Princess</h3>
+                    <div class="hotel-location">
+                        <span>📍</span> Playa del Carmen · 1h del aeropuerto
+                    </div>
+                    <div class="hotel-features">
+                        <span class="feature-tag">🏖️ Playa privada</span>
+                        <span class="feature-tag">🍽️ 10 restaurantes</span>
+                        <span class="feature-tag">💆 Spa</span>
+                        <span class="feature-tag">🎭 Shows</span>
+                    </div>
+                    <div class="hotel-pros-cons">
+                        <div class="pros">
+                            <h5>Ventajas</h5>
+                            <ul>
+                                <li>Resort completo con servicios</li>
+                                <li>Playa privada amplia</li>
+                                <li>Buenas instalaciones</li>
+                                <li>Múltiples restaurantes</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>Inconvenientes</h5>
+                            <ul>
+                                <li>Precio estimado (pendiente cotizar)</li>
+                                <li>Resort grande (mucho caminar)</li>
+                                <li>1h del aeropuerto</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ~1.550€ <span>/persona 10 noches</span>
+                        </div>
+                        <a href="https://www.bahia-principe.com/es/hoteles/riviera-maya/grand-bahia-principe-riviera-maya-resort/" target="_blank" class="hotel-btn">Ver hotel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BlueBay Grand Esmeralda -->
+            <div class="hotel-card budget">
+                <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80')">
                     <div class="hotel-stars">★★★★★</div>
                 </div>
                 <div class="hotel-content">
@@ -1485,6 +1607,7 @@
                                 <li>Precio más bajo de las opciones</li>
                                 <li>Resort grande con servicios</li>
                                 <li>Cerca de Playa del Carmen</li>
+                                <li>Buena relación calidad-precio</li>
                             </ul>
                         </div>
                         <div class="cons">
@@ -1498,7 +1621,7 @@
                     </div>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            ~1.000-1.200€ <span>/persona 9 noches</span>
+                            ~1.250€ <span>/persona 10 noches</span>
                         </div>
                         <a href="https://www.bluebayresorts.com/es/hoteles/mexico/riviera-maya/bluebay-grand-esmeralda/" target="_blank" class="hotel-btn">Ver hotel</a>
                     </div>
@@ -1506,11 +1629,77 @@
             </div>
         </div>
 
+        <div class="section-header" style="margin-top: 3rem;">
+            <h3 class="section-title" style="font-size: 1.5rem;">Tabla Comparativa de Precios</h3>
+            <p class="section-subtitle">Precios actualizados para 10 noches en habitación triple</p>
+        </div>
+
+        <div class="budget-card">
+            <table class="hotel-pricing-table">
+                <thead>
+                    <tr>
+                        <th>Hotel</th>
+                        <th>Estrellas</th>
+                        <th>Triple 10 noches</th>
+                        <th>Por persona</th>
+                        <th>Fuente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Barceló Maya Beach</strong></td>
+                        <td>★★★★★</td>
+                        <td>3.987€</td>
+                        <td>1.329€</td>
+                        <td><span class="price-badge confirmed">✅ Cotizado 2027</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Barceló Maya Palace</strong></td>
+                        <td>★★★★★</td>
+                        <td>4.925€</td>
+                        <td>1.642€</td>
+                        <td><span class="price-badge confirmed">✅ Cotizado 2027</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>RIU Lupita</strong></td>
+                        <td>★★★★★</td>
+                        <td>4.100€</td>
+                        <td>1.367€</td>
+                        <td><span class="price-badge confirmed">✅ Cotizado 2027</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ocean Coral & Turquesa</strong></td>
+                        <td>★★★★★</td>
+                        <td>~4.400€</td>
+                        <td>~1.470€</td>
+                        <td><span class="price-badge estimated">📊 Estimado (ref. 2023)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grand Riviera Princess</strong></td>
+                        <td>★★★★★</td>
+                        <td>~4.650€</td>
+                        <td>~1.550€</td>
+                        <td><span class="price-badge estimated">📊 Estimado (ref. 2023)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>BlueBay Grand Esmeralda</strong></td>
+                        <td>★★★★★</td>
+                        <td>~3.750€</td>
+                        <td>~1.250€</td>
+                        <td><span class="price-badge estimated">📊 Estimado (ref. 2023)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 1rem; padding: 1rem; background: var(--arena); border-radius: 12px; font-size: 0.9rem; color: var(--gris);">
+                <strong>Cómo leer la tabla:</strong> Los precios marcados con ✅ son cotizaciones reales obtenidas en 2027. Los precios con 📊 son estimaciones basadas en datos de 2023 y están pendientes de confirmar. El precio "Triple 10 noches" es el coste total de la habitación triple; divídelo entre 3 para obtener el precio por persona.
+            </div>
+        </div>
+
         <div class="alert-card" style="margin-top: 2rem; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left-color: var(--turquesa);">
             <div class="alert-icon">💡</div>
             <div class="alert-content">
                 <h4 style="color: var(--turquesa-dark);">Precios Orientativos</h4>
-                <p>Los precios son aproximados para 9 noches en febrero 2027, solo hotel en todo incluido. Pueden variar según fechas exactas, tipo de habitación y ofertas. Con 15 personas se puede negociar descuento de grupo.</p>
+                <p>Los precios son aproximados para 10 noches en febrero 2027, solo hotel en todo incluido. Los precios marcados con ✅ son cotizaciones reales de 2027. Los estimados (📊) se basan en referencias de 2023 y pueden variar. Con 15 personas se puede negociar descuento de grupo.</p>
             </div>
         </div>
     </section>
@@ -1731,7 +1920,7 @@
             <div class="budget-header">
                 <h3 class="budget-title">Desglose principal</h3>
                 <div class="budget-total">
-                    <div class="budget-total-value">2.300 - 3.100€</div>
+                    <div class="budget-total-value">2.350 - 3.200€</div>
                     <div class="budget-total-label">por persona (todo incluido)</div>
                 </div>
             </div>
@@ -1748,8 +1937,8 @@
                         <td>700 - 900€</td>
                     </tr>
                     <tr>
-                        <td>🏨 Hotel 5★ Todo Incluido 9 noches (según hotel elegido)</td>
-                        <td>1.200 - 1.600€</td>
+                        <td>🏨 Hotel 5★ Todo Incluido 10 noches (según hotel elegido)</td>
+                        <td>1.250 - 1.650€</td>
                     </tr>
                     <tr>
                         <td>🚐 Traslados aeropuerto-hotel (grupo)</td>
@@ -1765,7 +1954,7 @@
                     </tr>
                     <tr>
                         <td><strong>TOTAL POR PERSONA</strong></td>
-                        <td><strong>2.300 - 3.100€</strong></td>
+                        <td><strong>2.350 - 3.200€</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -1776,6 +1965,14 @@
             <div class="alert-content">
                 <h4 style="color: var(--coral-dark);">Precio vuelos actualizado (Enero 2026)</h4>
                 <p>Hemos comprobado que los vuelos MAD-CUN para finales de 2026 rondan los <strong>~800€/persona</strong>. Febrero 2027 es temporada alta, así que los vuelos estarán en ese rango o algo más. El precio final dependerá de cuándo se abran y lo rápido que reservemos.</p>
+            </div>
+        </div>
+
+        <div class="alert-card" style="margin-top: 1rem; background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%); border-left-color: #7c3aed;">
+            <div class="alert-icon">📅</div>
+            <div class="alert-content">
+                <h4 style="color: #5b21b6;">Días de salida de vuelos</h4>
+                <p>La mayoría de las agencias operan vuelos a Cancún los <strong>lunes, viernes y sábados</strong>. Esto es importante tenerlo en cuenta al planificar las fechas del viaje. Los vuelos de viernes y sábado suelen ser más caros por mayor demanda.</p>
             </div>
         </div>
 
