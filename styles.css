@@ -23,12 +23,16 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--gris-suave);
     color: var(--noche);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -1441,6 +1445,27 @@ h1, h2, h3 {
         grid-template-columns: 1fr;
     }
 
+    /* All grids to single column on mobile */
+    .excursions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .itinerary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extras-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+
     .budget-header {
         flex-direction: column;
         align-items: flex-start;
@@ -1493,7 +1518,8 @@ h1, h2, h3 {
     }
 
     /* Tables responsive */
-    .hotel-pricing-table {
+    .hotel-pricing-table,
+    .budget-table {
         display: block;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -1501,7 +1527,9 @@ h1, h2, h3 {
     }
 
     .hotel-pricing-table th,
-    .hotel-pricing-table td {
+    .hotel-pricing-table td,
+    .budget-table th,
+    .budget-table td {
         padding: 0.5rem 0.75rem;
         white-space: nowrap;
     }
@@ -1510,48 +1538,51 @@ h1, h2, h3 {
         padding: 1rem;
         overflow-x: auto;
     }
-
-    /* Alternative: Stack table for very small screens */
-    @media (max-width: 480px) {
-        .hotel-pricing-table thead {
-            display: none;
-        }
-
-        .hotel-pricing-table tr {
-            display: block;
-            margin-bottom: 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 1rem;
-            background: var(--blanco);
-        }
-
-        .hotel-pricing-table td {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border: none;
-            white-space: normal;
-        }
-
-        .hotel-pricing-table td::before {
-            content: attr(data-label);
-            font-weight: 700;
-            color: var(--gris);
-            margin-right: 1rem;
-        }
-
-        .hotel-pricing-table td:first-child {
-            font-size: 1.1rem;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 0.75rem;
-            margin-bottom: 0.5rem;
-        }
-    }
 }
 
 /* Extra small devices */
 @media (max-width: 480px) {
+    /* Stack tables for very small screens */
+    .hotel-pricing-table thead,
+    .budget-table thead {
+        display: none;
+    }
+
+    .hotel-pricing-table tr,
+    .budget-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1rem;
+        background: var(--blanco);
+    }
+
+    .hotel-pricing-table td,
+    .budget-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: none;
+        white-space: normal;
+    }
+
+    .hotel-pricing-table td::before,
+    .budget-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: var(--gris);
+        margin-right: 1rem;
+    }
+
+    .hotel-pricing-table td:first-child,
+    .budget-table td:first-child {
+        font-size: 1.1rem;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
