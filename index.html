@@ -560,6 +560,278 @@
             box-shadow: 0 5px 20px rgba(8, 145, 178, 0.4);
         }
 
+        /* Flights Section */
+        .flights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .flight-card {
+            background: var(--blanco);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .flight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .flight-card.economy-lite {
+            border: 3px solid var(--palmera);
+        }
+
+        .flight-card.economy-lite::before {
+            content: '💰 MÁS ECONÓMICO';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--palmera);
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .flight-card.economy-standard {
+            border: 3px solid var(--turquesa);
+        }
+
+        .flight-card.economy-standard::before {
+            content: '🧳 RECOMENDADO';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gradient-ocean);
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .flight-header {
+            background: var(--gradient-ocean);
+            padding: 1.5rem;
+            color: var(--blanco);
+        }
+
+        .flight-tariff {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .flight-airline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .flight-content {
+            padding: 1.5rem;
+        }
+
+        .flight-route {
+            background: var(--gris-suave);
+            border-radius: 16px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .flight-route-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .flight-direction {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--turquesa-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .flight-date {
+            font-size: 0.85rem;
+            color: var(--gris);
+        }
+
+        .flight-times {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .flight-time-block {
+            text-align: center;
+        }
+
+        .flight-time {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--noche);
+        }
+
+        .flight-city {
+            font-size: 0.9rem;
+            color: var(--gris);
+            font-weight: 500;
+        }
+
+        .flight-duration {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .flight-duration-line {
+            width: 100%;
+            height: 2px;
+            background: var(--turquesa);
+            position: relative;
+        }
+
+        .flight-duration-line::before,
+        .flight-duration-line::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--turquesa);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .flight-duration-line::before {
+            left: 0;
+        }
+
+        .flight-duration-line::after {
+            right: 0;
+        }
+
+        .flight-duration-text {
+            font-size: 0.75rem;
+            color: var(--gris);
+            margin-top: 0.25rem;
+        }
+
+        .flight-duration-type {
+            font-size: 0.7rem;
+            color: var(--palmera);
+            font-weight: 600;
+        }
+
+        .flight-luggage {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--arena);
+            border-radius: 12px;
+        }
+
+        .flight-luggage-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--noche);
+            margin-bottom: 0.75rem;
+        }
+
+        .flight-luggage-items {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .luggage-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .luggage-icon {
+            font-size: 1.5rem;
+        }
+
+        .luggage-count {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--noche);
+        }
+
+        .luggage-desc {
+            font-size: 0.7rem;
+            color: var(--gris);
+        }
+
+        .luggage-item.included .luggage-count {
+            color: var(--palmera);
+        }
+
+        .luggage-item.not-included .luggage-count {
+            color: #dc2626;
+        }
+
+        .flight-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .flight-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--turquesa-dark);
+        }
+
+        .flight-price span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--gris);
+            display: block;
+        }
+
+        .flight-price-old {
+            font-size: 1rem;
+            color: var(--gris);
+            text-decoration: line-through;
+        }
+
+        .flight-info-note {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--coral);
+        }
+
+        .flight-info-note p {
+            font-size: 0.85rem;
+            color: var(--noche);
+            margin: 0;
+        }
+
+        .flight-info-note strong {
+            color: var(--coral-dark);
+        }
+
         /* Timeline */
         .timeline {
             position: relative;
@@ -1700,6 +1972,241 @@
             <div class="alert-content">
                 <h4 style="color: var(--turquesa-dark);">Precios Orientativos</h4>
                 <p>Los precios son aproximados para 10 noches en febrero 2027, solo hotel en todo incluido. Los precios marcados con ✅ son cotizaciones reales de 2027. Los estimados (📊) se basan en referencias de 2023 y pueden variar. Con 15 personas se puede negociar descuento de grupo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flights Section -->
+    <section class="section" id="vuelos">
+        <div class="section-header">
+            <span class="section-tag">Vuelos</span>
+            <h2 class="section-title">Opciones de Vuelo</h2>
+            <p class="section-subtitle">Madrid - Cancun | 8 al 17 de enero 2027 | Air Europa directo</p>
+        </div>
+
+        <div class="flights-grid">
+            <!-- Economy Lite -->
+            <div class="flight-card economy-lite">
+                <div class="flight-header">
+                    <div class="flight-tariff">Tarifa Economy Lite</div>
+                    <div class="flight-airline">Air Europa - Vuelo directo</div>
+                </div>
+                <div class="flight-content">
+                    <!-- IDA -->
+                    <div class="flight-route">
+                        <div class="flight-route-header">
+                            <span class="flight-direction">IDA</span>
+                            <span class="flight-date">Viernes, 8 de enero de 2027</span>
+                        </div>
+                        <div class="flight-times">
+                            <div class="flight-time-block">
+                                <div class="flight-time">15:20</div>
+                                <div class="flight-city">MAD</div>
+                            </div>
+                            <div class="flight-duration">
+                                <div class="flight-duration-line"></div>
+                                <div class="flight-duration-text">11h 5min</div>
+                                <div class="flight-duration-type">Sin escalas</div>
+                            </div>
+                            <div class="flight-time-block">
+                                <div class="flight-time">20:25</div>
+                                <div class="flight-city">CUN</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VUELTA -->
+                    <div class="flight-route">
+                        <div class="flight-route-header">
+                            <span class="flight-direction">VUELTA</span>
+                            <span class="flight-date">Domingo, 17 de enero de 2027</span>
+                        </div>
+                        <div class="flight-times">
+                            <div class="flight-time-block">
+                                <div class="flight-time">22:25</div>
+                                <div class="flight-city">CUN</div>
+                            </div>
+                            <div class="flight-duration">
+                                <div class="flight-duration-line"></div>
+                                <div class="flight-duration-text">9h 0min</div>
+                                <div class="flight-duration-type">Sin escalas</div>
+                            </div>
+                            <div class="flight-time-block">
+                                <div class="flight-time">13:25<sup>+1</sup></div>
+                                <div class="flight-city">MAD</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipaje -->
+                    <div class="flight-luggage">
+                        <div class="flight-luggage-title">Equipaje incluido por pasajero</div>
+                        <div class="flight-luggage-items">
+                            <div class="luggage-item included">
+                                <span class="luggage-icon">🎒</span>
+                                <span class="luggage-count">1</span>
+                                <span class="luggage-desc">Personal</span>
+                            </div>
+                            <div class="luggage-item included">
+                                <span class="luggage-icon">🧳</span>
+                                <span class="luggage-count">1</span>
+                                <span class="luggage-desc">Cabina 10kg</span>
+                            </div>
+                            <div class="luggage-item not-included">
+                                <span class="luggage-icon">🛄</span>
+                                <span class="luggage-count">0</span>
+                                <span class="luggage-desc">Facturada</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flight-info-note">
+                        <p><strong>Atención:</strong> Sin maleta facturada. Solo 10kg de equipaje de mano. Ideal si viajas ligero.</p>
+                    </div>
+
+                    <div class="flight-footer">
+                        <div class="flight-price">
+                            <span class="flight-price-old">1.008,02 EUR</span>
+                            898,02 EUR
+                            <span>/persona ida y vuelta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Economy Standard -->
+            <div class="flight-card economy-standard">
+                <div class="flight-header">
+                    <div class="flight-tariff">Tarifa Economy Standard</div>
+                    <div class="flight-airline">Air Europa - Vuelo directo</div>
+                </div>
+                <div class="flight-content">
+                    <!-- IDA -->
+                    <div class="flight-route">
+                        <div class="flight-route-header">
+                            <span class="flight-direction">IDA</span>
+                            <span class="flight-date">Viernes, 8 de enero de 2027</span>
+                        </div>
+                        <div class="flight-times">
+                            <div class="flight-time-block">
+                                <div class="flight-time">15:20</div>
+                                <div class="flight-city">MAD</div>
+                            </div>
+                            <div class="flight-duration">
+                                <div class="flight-duration-line"></div>
+                                <div class="flight-duration-text">11h 5min</div>
+                                <div class="flight-duration-type">Sin escalas</div>
+                            </div>
+                            <div class="flight-time-block">
+                                <div class="flight-time">20:25</div>
+                                <div class="flight-city">CUN</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VUELTA -->
+                    <div class="flight-route">
+                        <div class="flight-route-header">
+                            <span class="flight-direction">VUELTA</span>
+                            <span class="flight-date">Domingo, 17 de enero de 2027</span>
+                        </div>
+                        <div class="flight-times">
+                            <div class="flight-time-block">
+                                <div class="flight-time">22:25</div>
+                                <div class="flight-city">CUN</div>
+                            </div>
+                            <div class="flight-duration">
+                                <div class="flight-duration-line"></div>
+                                <div class="flight-duration-text">9h 0min</div>
+                                <div class="flight-duration-type">Sin escalas</div>
+                            </div>
+                            <div class="flight-time-block">
+                                <div class="flight-time">13:25<sup>+1</sup></div>
+                                <div class="flight-city">MAD</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipaje -->
+                    <div class="flight-luggage">
+                        <div class="flight-luggage-title">Equipaje incluido por pasajero</div>
+                        <div class="flight-luggage-items">
+                            <div class="luggage-item included">
+                                <span class="luggage-icon">🎒</span>
+                                <span class="luggage-count">1</span>
+                                <span class="luggage-desc">Personal</span>
+                            </div>
+                            <div class="luggage-item included">
+                                <span class="luggage-icon">🧳</span>
+                                <span class="luggage-count">1</span>
+                                <span class="luggage-desc">Cabina 10kg</span>
+                            </div>
+                            <div class="luggage-item included">
+                                <span class="luggage-icon">🛄</span>
+                                <span class="luggage-count">1</span>
+                                <span class="luggage-desc">Facturada 23kg</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flight-info-note">
+                        <p><strong>Recomendado:</strong> Maleta facturada de 23kg incluida. Sin problemas de peso ni espacio para souvenirs.</p>
+                    </div>
+
+                    <div class="flight-footer">
+                        <div class="flight-price">
+                            <span class="flight-price-old">1.008,02 EUR</span>
+                            1.005,02 EUR
+                            <span>/persona ida y vuelta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-card" style="margin-top: 2rem; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left-color: var(--turquesa);">
+            <div class="alert-icon">💡</div>
+            <div class="alert-content">
+                <h4 style="color: var(--turquesa-dark);">Nuestra experiencia (World2Fly 2023)</h4>
+                <p>Cuando fuimos en 2023 con World2Fly, todos llevamos maleta facturada por comodidad de espacio y para traer souvenirs sin preocupaciones. La diferencia de ~107€ entre Lite y Standard puede merecer la pena para un viaje de 10 días.</p>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 3rem;">
+            <h3 class="section-title" style="font-size: 1.5rem;">Tabla Comparativa de Tarifas</h3>
+            <p class="section-subtitle">Precios por persona, ida y vuelta con Air Europa</p>
+        </div>
+
+        <div class="budget-card">
+            <table class="hotel-pricing-table">
+                <thead>
+                    <tr>
+                        <th>Tarifa</th>
+                        <th>Equipaje Mano</th>
+                        <th>Equipaje Facturado</th>
+                        <th>Precio/persona</th>
+                        <th>Diferencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Economy Lite</strong></td>
+                        <td>1 personal + 1 cabina (10kg)</td>
+                        <td>No incluido</td>
+                        <td>898,02€</td>
+                        <td><span class="price-badge confirmed" style="background: var(--palmera);">Base</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Economy Standard</strong></td>
+                        <td>1 personal + 1 cabina (10kg)</td>
+                        <td>1 maleta 23kg</td>
+                        <td>1.005,02€</td>
+                        <td><span class="price-badge estimated">+107€</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 1rem; padding: 1rem; background: var(--arena); border-radius: 12px; font-size: 0.9rem; color: var(--gris);">
+                <strong>Nota:</strong> Precios consultados en enero 2026 para fechas 8-17 enero 2027. Los precios pueden variar. Vuelo directo Madrid-Cancún operado por Air Europa.
             </div>
         </div>
     </section>
