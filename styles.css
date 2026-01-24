@@ -1449,4 +1449,151 @@ h1, h2, h3 {
     .section {
         padding: 3rem 1rem;
     }
+
+    /* Flights responsive */
+    .flights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flight-route-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .flight-times {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .flight-duration {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .flight-duration-line {
+        width: 60px;
+        height: 2px;
+    }
+
+    .flight-time-block {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .flight-luggage-items {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /* Tables responsive */
+    .hotel-pricing-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.85rem;
+    }
+
+    .hotel-pricing-table th,
+    .hotel-pricing-table td {
+        padding: 0.5rem 0.75rem;
+        white-space: nowrap;
+    }
+
+    .budget-card {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+
+    /* Alternative: Stack table for very small screens */
+    @media (max-width: 480px) {
+        .hotel-pricing-table thead {
+            display: none;
+        }
+
+        .hotel-pricing-table tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem;
+            background: var(--blanco);
+        }
+
+        .hotel-pricing-table td {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border: none;
+            white-space: normal;
+        }
+
+        .hotel-pricing-table td::before {
+            content: attr(data-label);
+            font-weight: 700;
+            color: var(--gris);
+            margin-right: 1rem;
+        }
+
+        .hotel-pricing-table td:first-child {
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .flight-card::before {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .hotel-card::before {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .alert-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .alert-icon {
+        font-size: 1.5rem;
+    }
+
+    .flight-price {
+        font-size: 1.2rem;
+    }
+
+    .hotel-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .hotel-btn {
+        text-align: center;
+    }
 }
